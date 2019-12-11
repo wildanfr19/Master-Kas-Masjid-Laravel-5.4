@@ -17,7 +17,7 @@
 						<td><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ \Carbon\Carbon::parse()->format('d/m/Y' ) }}</h4></td>
 					</tr>
 					<tr>
-						<td><h4><b>Total Jumlah Pengeluan</b></h4></td>
+						<td><h4><b>Total Jumlah Pengeluaran</b></h4></td>
 						<td></td>
 						<td><h4>:</h4></td>
 						@php $totaljumpeng = 0; @endphp
@@ -34,7 +34,7 @@
 				</table>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-sm btn-info" data-dismiss="modal">Kembali</button>
+				<button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">Kembali</button>
 			</div>
 		</div>
 	</div>

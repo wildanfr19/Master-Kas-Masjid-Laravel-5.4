@@ -2,7 +2,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-user-plus"></i>  Tambah Donatur</h5>
+				<h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-print"></i>  Cetak Report</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>

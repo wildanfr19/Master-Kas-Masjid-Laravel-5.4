@@ -21,17 +21,22 @@ class KasMasukController extends Controller
     public function dashboard(Request $request)
     {
       if ($request->ajax()) {
-        // $tahun = $request->get('tgl_kas_masuk');
-        // $bulan = $request->get('created_at');
+        // $from = $request->get('tgl');
+        // $to = $request->get('created_at');
 
         $kasmasuk = DB::table('kass')->where('jenis','masuk')->get();
+                  // ->whereBetween('tgl', [$from, $to])
+        
+        // $kasmasuk = Kas::whereBetween('tgl', [$from, $to])->where('jenis','masuk')->get();
+
+        // dd($kasmasuk);
 
         return Datatables::of($kasmasuk)
         ->addColumn('action', function($kasmasuk){
-          $action = '<a href="'. route('kasmasuk.edit', base64_encode($kasmasuk->id)) .'" data-toggle="tooltip" data-placement="top" title="Ubah" class="btn btn-xs btn-primary btn-round"><i class="fa fa-edit" aria-hidden="true"></i> </a>&nbsp;';
+          $action = '<a href="'. route('kasmasuk.edit', base64_encode($kasmasuk->id)) .'" data-toggle="tooltip" data-placement="top" title="Ubah" class="btn btn-xs btn-primary btn-border btn-round"><i class="fa fa-edit" aria-hidden="true"></i></a>&nbsp;';
           $action .= '<div class="pull-right" style="margin-right: 20%">';
           $action .= \Form::open(['url'=> route('kasmasuk.destroy', $kasmasuk->id),'method'=>'delete', 'id' => 'form_id']);
-          $action .= "<button type='submit' class='btn btn-xs btn-danger btn-round'><i class='fas fa-trash-alt'></i> </button>";
+          $action .= "<button type='submit' class='btn btn-xs btn-round btn-danger'><i class='fas fa-trash-alt'></i></button>";
           $action .= \Form::close();
           $action .= '</div>';
           return $action;
@@ -143,7 +148,7 @@ class KasMasukController extends Controller
       $kasmasuk->jumlah = $request->jumlah;
       $kasmasuk->jenis  = 'masuk';
       $kasmasuk->masuk  = $request->jumlah;
-      $kasmasuk->keluar  = '';
+      $kasmasuk->keluar  = '0';
       $kasmasuk->save();
       Alert()->success('Mengupdate Kas masuk', 'Berhasil')->persistent('close');
       return redirect()->route('kasmasuk.index');

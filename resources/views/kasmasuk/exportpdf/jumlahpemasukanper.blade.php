@@ -28,15 +28,15 @@
 	<font face="Arial" color="black"> <p align="center"> <u> <b> Laporan Kas Masuk </b></u> <br/> Tanggal : {{ \Carbon\Carbon::parse($from)->format('d-M-Y') }}&nbsp; - &nbsp; {{ \Carbon\Carbon::parse($to)->format('d-M-Y') }}</font>
 	 <font face="Arial" color="black"><p align="center">  </p></font>
 
-<table {{-- border="1" cellpadding="1" cellspacing="0" --}} class="table table-striped">
+<table border="1" cellpadding="0" cellspacing="2">
 	
 	<thead>
-		<tr>
-			<th>No</th>
-			<th>Tanggal</th>
-			<th>Nama</th>
-			<th>Keterangan</th>
-			<th>Jumlah</th>
+		<tr style="background-color: green">
+			<th style="text-align:center; color: white" >No</th>
+			<th style="text-align:center; color: white">Tanggal</th>
+			<th style="text-align:center; color: white">Nama</th>
+			<th style="text-align:center; color: white">Keterangan</th>
+			<th style="text-align:center; color: white">Jumlah</th>
 
 		</tr>
 	</thead>
@@ -44,11 +44,11 @@
 		@php $no =1; @endphp
 		@foreach($kasmasuk as $row)
 		<tr>
-			<td>{{ $no++ }}</td>
-			<td>{{ \Carbon\Carbon::parse($row->tgl)->format('d-M-Y')  }}</td>
-			<td>{{ $row->nama }}</td>
-			<td>{{ $row->keterangan }}</td>
-			<td>Rp.{{ number_format($row->jumlah) }}</td>
+			<td style="text-align:center; ">{{ $no++ }}</td>
+			<td style="text-align:center; ">{{ date('d F Y', strtotime($row->tgl))  }}</td>
+			<td style="text-align:center; ">{{ $row->nama }}</td>
+			<td style="text-align:center; ">{{ $row->keterangan }}</td>
+			<td style="text-align: right;">Rp.{{ format_rupiah($row->jumlah) }}</td>
 		</tr>
 		@endforeach
 	
@@ -60,19 +60,18 @@
 			@foreach($kasmasuk as $key => $item)
 			@php $totaljumpem += $item['jumlah']; @endphp
 			@endforeach
-			<th>Rp.{{ number_format($totaljumpem) }}</th>
+			<th style="text-align: right;">Rp.{{ format_rupiah($totaljumpem) }}</th>
 		</tr>
 	</tfoot>
 </table>
-
-{{-- 	
-	<p style="text-align: left;">Total Jumlah Pemasukan : Rp.{{ number_format($totaljumpem) }}
-
-	</p>
-	<p style="text-align: right;">
-		Karawang, {{ \Carbon\Carbon::now()->format('d-M-Y') }}
-	</p>
- --}}
+<p style="text-align: right; margin-right: 12%; margin-top: 6%">
+	Karawang, {{ \Carbon\Carbon::now()->format('d-M-Y') }}
+	<br>
+	<br>
+	<br>
+	<br>
+	Pengurus DKM Masjid
+</p>
 
 </body>
 </html>

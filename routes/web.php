@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/rekapitulasi','RekapitulasiController@index')->name('rekapitulasi.index');
     Route::get('/exportpdfrekap', 'RekapitulasiController@exportpdfrekap')->name('rekapitulasi.exportpdfrekap');
     Route::get('/exportpdfperioderekap', 'RekapitulasiController@exportpdfperioderekap')->name('rekapitulasi.exportpdfperioderekap');
+
 });
 
 

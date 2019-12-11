@@ -34,7 +34,7 @@
 				</table>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-sm btn-info" data-dismiss="modal">Kembali</button>
+				<button type="button" class="btn btn-sm btn-primary " data-dismiss="modal">Kembali</button>
 			</div>
 		</div>
 	</div>

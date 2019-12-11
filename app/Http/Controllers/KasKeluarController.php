@@ -25,10 +25,10 @@ class KasKeluarController extends Controller
         // $tahun = $request->get('tgl_kas_keluar');
         // $bulan = $request->get('created_at');
         
-        $kaskeluar = DB::table('kass')->where('jenis','keluar')->get();
+        $kaskeluar = Kas::all()->where('jenis','keluar');
         return Datatables::of($kaskeluar)
         ->addColumn('action', function($kaskeluar){
-          $action = '<a href="'. route('kaskeluar.edit', base64_encode($kaskeluar->id)) .'" data-toggle="tooltip" data-placement="top" title="Ubah" class="btn btn-xs btn-primary btn-round"><i class="fa fa-edit" aria-hidden="true"></i> </a>&nbsp;';
+          $action = '<a href="'. route('kaskeluar.edit', base64_encode($kaskeluar->id)) .'" data-toggle="tooltip" data-placement="top" title="Ubah" class="btn btn-xs btn-primary btn-border btn-round"><i class="fa fa-edit" aria-hidden="true"></i> </a>&nbsp;';
           $action .= '<div class="pull-right" style="margin-right: 20%">';
           $action .= \Form::open(['url'=> route('kaskeluar.destroy', $kaskeluar->id),'method'=>'delete', 'id' => 'form_id']);
           $action .= "<button type='submit' class='btn btn-xs btn-danger btn-round'><i class='fas fa-trash-alt'></i> </button>";

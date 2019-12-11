@@ -32,23 +32,23 @@
 						<h4 class="card-title"><i class="fas fa-clipboard-list"></i> List Kas Masuk</h4>
 					</div>
 					<div class="box-header" style="margin-left: 29px; margin-top: 8px;">
-						<button type="submit" class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus-circle"></i> Tambah Kas masuk</button>
+						<button type="submit" class="btn  btn-primary btn-sm btn-round" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus-circle"></i> Tambah </button>
 
-						<button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModalEye"><i class="fas fa-eye"></i> Lihat Jumlah Pemasukan</button>
+						<button type="button" class="btn btn-primary btn-sm btn-round btn-border" data-toggle="modal" data-target="#exampleModalEye"><i class="fas fa-eye"></i> Lihat Jumlah Pemasukan</button>
 
 						{{-- <a href="{{ route('kasmasuk.exportexcel') }}" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="Cetak Excel">
 						<i class="far fa-file-excel"></i> Cetak Excel
 						</a> --}}
-						<button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModalExcel"><i class="far fa-file-excel"></i> Cetak Excel</button>
+						<button type="button" class="btn btn-primary btn-border btn-sm btn-round" data-toggle="modal" data-target="#exampleModalExcel"><i class="far fa-file-excel"></i> Cetak Excel</button>
 
-						<button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModalPDF"><i class="fas fa-print"></i> Cetak PDF</button>
+						<button type="button" class="btn btn-primary btn-border btn-sm btn-round" data-toggle="modal" data-target="#exampleModalPDF"><i class="fas fa-print"></i> Cetak PDF</button>
 
 						{{-- <a href="{{ route('kasmasuk.exportpdf') }}" class="btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="Cetak PDF">
 						<i class="far fa-file-pdf"></i> Cetak PDF
 						</a> --}}
 					</div>
 					<br>
-					<div class="box-header" style="margin-left: 20%; margin-top: 8px;">
+				{{-- 	<div class="box-header" style="margin-left: 20%; margin-top: 8px;">
 						<div class="row">
 
 							<div class="col-md-3">
@@ -64,13 +64,13 @@
 					
 
 							<div class="col-md-2">
-								<button id="display" type="button" class="form-control btn btn-sm btn-info" data-toggle="tooltip" data-placement="top" title="Display">Display</button>
+								<button id="display" type="button" class="form-control btn btn-primary" data-toggle="tooltip" data-placement="top" title="Display">Display</button>
 							</div>
 						</div>
-					</div>  
+					</div>  --}} 
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="users-table" cellspacing="0" width="100%" class="table table-striped table-condensed" >
+							<table id="users-table" cellspacing="0" width="100%" class="table table-condensed table-bordered table-striped" >
 								<thead>
 									<tr>
 										<th>No</th>
