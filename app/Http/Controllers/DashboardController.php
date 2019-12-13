@@ -16,12 +16,20 @@ class DashboardController extends Controller
     {	
 
     	$kas = Kas::where(DB::raw("(DATE_FORMAT(tgl, '%Y'))"), date('Y'))->get();
-    	$chart = Charts::database($kas,'bar','highcharts')
+    	$chart = Charts::database($kas,'line','highcharts')
     							->title('Report Rekapitulasi Kas')
     							->elementLabel("Report Rekapitulasi Kas")
     							->dimensions(1000, 500)
     							->responsive(false)
-    							->groupByYear();
+    							->groupByMonth(date('Y'), true);
+
+        // $users = User::where(DB::raw("(DATE_FORMAT(created_at,'%Y'))"),date('Y'))->get();
+        // $chart = Charts::database($users, 'bar', 'highcharts')
+        //           ->title("Monthly new Register Users")
+        //           ->elementLabel("Total Users")
+        //           ->dimensions(1000, 500)
+        //           ->responsive(false)
+        //           ->groupByMonth(date('Y'), true);
 
     	$kasmasuk = Kas::all()->where('jenis','masuk');
     	$kaskeluar= Kas::all()->where('jenis','keluar');

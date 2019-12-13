@@ -3,7 +3,9 @@
 	<div class="logo-header" data-background-color="blue">
 		
 		<a href="index.html" class="logo">
-			<img src="{{asset('assets/img/logo.svg')}}" alt="navbar brand" class="navbar-brand">
+			{{-- <img src="{{asset('images/logodkm.png')}}" width="40px"  height="40px" alt="navbar brand" class="navbar-brand"> --}}
+			<h3 style="color: white; margin-top: 15%; margin-left: 30%;"><b>MASTERKAS</b></h3>
+		{{-- 	<p style="color: white">Dkm Masjid</p> --}}
 		</a>
 		<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon">

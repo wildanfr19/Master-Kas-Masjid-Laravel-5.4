@@ -1,16 +1,16 @@
 <div class="row">
-	<div class="sidebar sidebar-style-2">
+	<div class="sidebar" data-background-color='dark2'>
 		<div class="sidebar-wrapper scrollbar scrollbar-inner">
 			<div class="sidebar-content">
 				<div class="user">
 					<div class="avatar-sm float-left mr-2">
-						<img src="{{asset('assets/img/profile.jpg')}}" alt="..." class="avatar-img rounded-circle">
+						<img src="{{asset('images/man-1.png')}}" alt="..." class="avatar-img rounded-circle">
 					</div>
 					<div class="info">
 						<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 							<span>
 								Welcome
-								<span class="user-level">{{ Auth::user()->name  }}</span>
+								<span class="user-level">{{ Auth::user()->role  }}</span>
 								<span class="caret"></span>
 							</span>
 						</a>

@@ -19,13 +19,13 @@
 	<div class="page-inner mt--8">
 		<div class="row mt--2">
 			<div class="col-md-12">
-				<div class="card full-height">
+				<div class="card full-height" style="border-top: 4px solid #3498DB;">
 					<div class="card-body">
-						<div class="card-title">Master Pengelolaan Kas Masjid </div>
+						<div class="card-title"><i class="fab fa-dashcube"></i> Dashboard </div>
 						<div class="card-title">
 						</div>
 						<hr>
-						<div class="card-title"><i class="fas fa-chart-bar"></i> Statistik </div>
+						{{-- <div class="card-title"><i class="fas fa-chart-bar"></i> Dashboard </div> --}}
 						<div class="card-category"></div>
 						<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
 							<div class="col-sm-3 col-md-3">
