@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" href="{{asset('assets/css/atlantis.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+	{!! Charts::assets() !!}
 	
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->

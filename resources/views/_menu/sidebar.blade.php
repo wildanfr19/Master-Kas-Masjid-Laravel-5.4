@@ -67,12 +67,14 @@
 						<p>Rekapitulasi</p>
 					</a>
 				</li>
+				@if(Auth::user()->role == "admin")
 				<li class="nav-item">
-					<a data-toggle="collapse" href="#base">
+					<a  href="{{ route('user.index') }}">
 						<i class="fas fa-users"></i>
 						<p>Manajemen User</p>
 					</a>
 				</li>
+				@endif
 				<li class="nav-item">
 					<a data-toggle="collapse" href="{{ route('logout') }}" onclick="event.preventDefault();
 						document.getElementById('logout-form').submit();">

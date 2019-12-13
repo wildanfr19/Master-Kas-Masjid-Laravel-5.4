@@ -33,6 +33,7 @@
 <!-- Sweet Alert -->
 {{-- <script src="{{asset('assets/js/plugin/sweetalert/sweetalert.min.js')}}"></script> --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
 <!-- Atlantis JS -->
 <script src="{{asset('assets/js/atlantis.min.js')}}"></script>
@@ -41,6 +42,7 @@
 <script src="{{asset('assets/js/setting-demo.js')}}"></script>
 {{-- <script src="{{asset('assets/js/demo.js')}}"></script> --}}
 @include('sweet::alert')
+@yield('footer')
 @stack('scripts')
 {{-- <script>
 	Circles.create({

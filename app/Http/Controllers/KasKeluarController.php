@@ -31,7 +31,7 @@ class KasKeluarController extends Controller
           $action = '<a href="'. route('kaskeluar.edit', base64_encode($kaskeluar->id)) .'" data-toggle="tooltip" data-placement="top" title="Ubah" class="btn btn-xs btn-primary btn-border btn-round"><i class="fa fa-edit" aria-hidden="true"></i> </a>&nbsp;';
           $action .= '<div class="pull-right" style="margin-right: 20%">';
           $action .= \Form::open(['url'=> route('kaskeluar.destroy', $kaskeluar->id),'method'=>'delete', 'id' => 'form_id']);
-          $action .= "<button type='submit' class='btn btn-xs btn-danger btn-round'><i class='fas fa-trash-alt'></i> </button>";
+          $action .= "<button type='submit' onclick='return confirm('Yakin?')' class='btn btn-xs btn-danger btn-round'><i class='fas fa-trash-alt'></i> </button>";
           $action .= \Form::close();
           $action .= '</div>';
           return $action;
