@@ -31,14 +31,7 @@
 		        $totaljumpem += $item['jumlah']; 
 		     @endphp
 		@endforeach
-
-		@php $totaljumpeng = 0; @endphp
-		    @foreach($kaskeluar as $key => $item)
-			@php
-			   $totaljumpeng += $item['jumlah'];
-			@endphp
-		@endforeach
-
+		
 		@if($totaljumpem > '0')
 		<button type="submit"  class="btn btn-sm btn-primary "><i class="fas fa-save"></i> Simpan</button>
 		@else
