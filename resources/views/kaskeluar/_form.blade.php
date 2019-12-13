@@ -15,8 +15,36 @@
 	</div>
 	<br>
 	<div class="modal-footer">
+	{{-- 	@php $totaljumpem = 0; @endphp
+		@foreach($kasmasuk as $key => $item)
+		@php $totaljumpem += $item['jumlah']; @endphp
+		@endforeach
+		<p>Rp.{{ format_rupiah($totaljumpem) }}</p>
+		@php $totaljumpeng = 0; @endphp
+		@foreach($kaskeluar as $key => $item)
+		@php $totaljumpeng += $item['jumlah']; @endphp
+		@endforeach --}}
+	{{-- 	@if(count($kas[0]->jumlah > 0)) --}}
+		@php $totaljumpem = 0; @endphp
+		@foreach($kasmasuk as $key => $item)
+		     @php  
+		        $totaljumpem += $item['jumlah']; 
+		     @endphp
+		@endforeach
 
-		<button type="submit" class="btn btn-sm btn-primary "><i class="fas fa-save"></i> Simpan</button>
+		@php $totaljumpeng = 0; @endphp
+		    @foreach($kaskeluar as $key => $item)
+			@php
+			   $totaljumpeng += $item['jumlah'];
+			@endphp
+		@endforeach
+
+		@if($totaljumpem > '0')
+		<button type="submit"  class="btn btn-sm btn-primary "><i class="fas fa-save"></i> Simpan</button>
+		@else
+			<button type="submit" disabled="true"  class="btn btn-sm btn-primary "><i class="fas fa-save"></i> Simpan</button>
+	    @endif		
+ 
 		<button type="button" class="btn btn-sm btn-primary btn-border" data-dismiss="modal">Batal</button>
 	</div>
 </form>

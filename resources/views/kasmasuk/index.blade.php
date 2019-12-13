@@ -70,7 +70,7 @@
 					</div>  --}} 
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="users-table" cellspacing="0" width="100%" class="table table-condensed table-bordered table-striped" >
+							<table id="users-table" cellspacing="0" width="100%" class="table table-condensed " >
 								<thead>
 									<tr>
 										<th>No</th>

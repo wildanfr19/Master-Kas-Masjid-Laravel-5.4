@@ -67,7 +67,7 @@
 					</div>  --}} 
 					<div class="card-body">
 						<div class="table-responsive">
-							<table id="users-table" cellspacing="0" width="100%" class="table table-condensed table-bordered table-striped" >
+							<table id="users-table" cellspacing="0" width="100%" class="table table-condensed" >
 								<thead>
 									<tr>
 										<th>No</th>
@@ -77,8 +77,7 @@
 										<th>Alamat</th>
 										<th>No Hp</th>
 										<th>Email</th>
-										
-										<th style="width: 28%">Action</th>
+										<th style="width: 14%">Action</th>
 									</tr>
 								</thead>
 								<tbody>
