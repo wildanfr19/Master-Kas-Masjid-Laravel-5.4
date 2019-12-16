@@ -77,7 +77,7 @@
 										<th>Alamat</th>
 										<th>No Hp</th>
 										<th>Email</th>
-										<th style="width: 14%">Action</th>
+										<th style="width: 20%">Action</th>
 									</tr>
 								</thead>
 								<tbody>

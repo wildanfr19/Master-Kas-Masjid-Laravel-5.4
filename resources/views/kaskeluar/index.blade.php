@@ -113,9 +113,9 @@ $(document).ready(function() {
         	processing: true, 
         	responsive: true,
         	"order": [[1, 'asc']],
-        	"oLanguage": {
-        	  'sProcessing': '<div id="processing" style="margin: 0px; padding: 0px; position: fixed; right: 0px; top: 0px; width: 100%; height: 100%; background-color: rgb(102, 102, 102); z-index: 30001; opacity: 0.8;"><p style="position: absolute; color: White; top: 50%; left: 45%;"><img src="{{ asset('images/ajax-loader.gif') }}"></p></div>Processing...'
-        	},
+        	// "oLanguage": {
+        	//   'sProcessing': '<div id="processing" style="margin: 0px; padding: 0px; position: fixed; right: 0px; top: 0px; width: 100%; height: 100%; background-color: rgb(102, 102, 102); z-index: 30001; opacity: 0.8;"><p style="position: absolute; color: White; top: 50%; left: 45%;"><img src="{{ asset('images/ajax-loader.gif') }}"></p></div>Processing...'
+        	// },
             serverSide: true,
             ajax: '{{ route('kaskeluar.dashboard') }}',
             columns: [

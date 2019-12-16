@@ -24,7 +24,7 @@ class KasMasukController extends Controller
         // $from = $request->get('tgl');
         // $to = $request->get('created_at');
 
-        $kasmasuk = DB::table('kass')->where('jenis','masuk')->get();
+        $kasmasuk = Kas::all()->where('jenis','masuk');
                   // ->whereBetween('tgl', [$from, $to])
         
         // $kasmasuk = Kas::whereBetween('tgl', [$from, $to])->where('jenis','masuk')->get();
@@ -150,7 +150,7 @@ class KasMasukController extends Controller
       $kasmasuk->masuk  = $request->jumlah;
       $kasmasuk->keluar  = '0';
       $kasmasuk->save();
-      Alert()->success('Mengupdate Kas masuk', 'Berhasil')->persistent('close');
+      alert()->success('Mengupdate Kas masuk', 'Berhasil')->persistent('close');
       return redirect()->route('kasmasuk.index');
 
     }
@@ -179,7 +179,9 @@ class KasMasukController extends Controller
     {   
       $from = $request->get('tgl');
       $to   = $request->get('created_at');
-      $kasmasuk = Kas::whereBetween('tgl',[$from, $to])->where('jenis','masuk')->get();                     
+      $kasmasuk = Kas::whereBetween('tgl', [$from, $to])->where('jenis','masuk')->get();
+
+      // dd($kasmasuk);                     
       $pdf = PDF::loadview('kasmasuk.exportpdf.jumlahpemasukanper',['kasmasuk'=>$kasmasuk, 'from' => $from, 'to' => $to]);
       return $pdf->setPaper('a4')->download("jumlahpemasukanper.pdf");            
 
@@ -203,7 +205,7 @@ class KasMasukController extends Controller
              date('d F Y', strtotime($item->tgl)),
              $item->nama,
              $item->keterangan,
-             'Rp.' . number_format($item->jumlah)
+             'Rp.' . format_rupiah($item->jumlah)
            ]);
           }
         });

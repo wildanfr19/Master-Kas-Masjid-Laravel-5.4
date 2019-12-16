@@ -15,20 +15,25 @@
 			border : 1px solid;
 		}
 	</style>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	{{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}"> --}}
 </head>
 <body>
 
 
-	<h4><b>DKM MASJID</b></h4>
-	<h4><b>MASJID JAMI BAETUL ANWAR</b></h4>
-	<p><b>Dusun Selang 1 RT011/RW003 Desa Ciwaringin Kec.Lemahabang Wadas</b></p>
+	<h3>
+		<b>
+			DKM MASJID<br/>
+		MASJID JAMI BAETUL ANWAR <br/>
+	
+	   Dusun Selang 1 RT011/RW003 Desa Ciwaringin Kec.Lemahabang Wadas
+	</b>
+	</h3>
 	<hr>
 
 	<font face="Arial" color="black"> <p align="center"> <u> <b> Laporan Kas Masuk </b></u> <br/> Tanggal : {{ \Carbon\Carbon::now()->format('d-M-Y') }}</font>
 	 <font face="Arial" color="black"><p align="center">  </p></font>
 
-<table border="1" cellspacing="0" cellspacing="2">
+<table border="1"  cellspacing="0" cellpadding="4">
 	
 	<thead>
 		<tr style="background-color: green">
@@ -46,16 +51,16 @@
 		@foreach($kasmasuk as $row)
 		<tr>
 			<td style="text-align:center; ">{{ $no++ }}</td>
-			<td style="text-align:center; ">{{ date('d F Y', strtotime($row->tgl)) }}</td>
+			<td style="text-align:center; ">{{ date('d M Y', strtotime($row->tgl)) }}</td>
 			<td style="text-align:center; ">{{ $row->nama }}</td>
 			<td style="text-align:center; ">{{ $row->keterangan }}</td>
-			<td style="text-align:right;">Rp.{{ format_rupiah($row->jumlah) }}</td>
+			<td style="text-align:right;">Rp.{{ format_rupiah($row->jumlah) }},-</td>
 		</tr>
 		@endforeach
 	
 	</tbody>
 	<tfoot>
-		<tr>
+		<tr style="background-color: yellow">
 			<th colspan="4"><center>Total Jumlah Pemasukan</center></th>
 			@php $totaljumpem = 0; @endphp
 			@foreach($kasmasuk as $key => $item)
@@ -67,7 +72,6 @@
 </table>
 <p style="text-align: right; margin-right: 12%; margin-top: 6%">
 	Karawang, {{ \Carbon\Carbon::now()->format('d-M-Y') }}
-	<br>
 	<br>
 	<br>
 	<br>
